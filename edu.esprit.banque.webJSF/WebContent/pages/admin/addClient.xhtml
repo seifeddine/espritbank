@@ -1,0 +1,32 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                 xmlns:p="http://primefaces.org/ui">
+                
+			<h:form rendered="#{clientMB.displayForm}">
+				<h:panelGrid columns="2">
+				<h:outputText value="PRENOM" />
+				<p:inputText value="#{clientMB.client.prenom}" />
+				
+				<h:outputText value="NOM" />
+				<p:inputText value="#{clientMB.client.nom}" />
+				
+				<h:outputText value="AGE" />
+				<p:inputText value="#{clientMB.client.age}" />
+				
+				<h:outputText value="CIN" />
+				<p:inputText value="#{clientMB.client.cin}" />
+				
+				<h:panelGrid columns="2">
+				<p:commandButton value="DELETE" actionListener="#{clientMB.delete}" update=":panelManageClient"/>
+				<p:commandButton value="CANCEL" actionListener="#{clientMB.cancel}" update=":panelManageClient" />
+				</h:panelGrid>
+				
+				<p:commandButton value="SAVE" actionListener="#{clientMB.saveOrUpdateClient}" update=":panelManageClient" />
+				</h:panelGrid>
+			
+			</h:form>
+			
+		
+</ui:composition>

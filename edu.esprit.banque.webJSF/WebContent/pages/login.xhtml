@@ -1,0 +1,37 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                  xmlns:p="http://primefaces.org/ui"
+                template="/template/template.xhtml">
+                	
+			<ui:define name="pageTitle"> Login page</ui:define>		
+			<ui:define name="pageContent">
+			
+  
+              
+			
+			<h:form id="loginForm">
+			<p:panel id="panel" header="Connexion" style="margin-bottom:10px;">  
+        <p:messages id="messages" /> 
+	<h:panelGrid columns="2">
+	
+		<h:outputText for="log" value="Login *" />
+		<p:inputText value="#{authenMB.client.login}" required="true" label="Login" id="log">
+		<f:validateLength minimum="2" />
+		</p:inputText>
+		 
+		
+		<h:outputText value="Password *" for="pass" />
+		<p:password value="#{authenMB.client.pass}" required="true" label="Password" id="pass"></p:password>
+		
+		<p:commandButton process="@parent:@parent" update="@form" id="loginButton" action="#{authenMB.authentification}" value="LOG IN" />
+		<h:message for="loginButton" styleClass="error"/>
+	
+	</h:panelGrid>
+		</p:panel>
+	
+	</h:form>
+			
+			</ui:define>
+</ui:composition>

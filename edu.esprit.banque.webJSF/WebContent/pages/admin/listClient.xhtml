@@ -1,0 +1,63 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+               >
+          
+     	
+		<h:form>
+		
+			<p:dataTable value="#{clientMB.clients}" 
+			var="clientCourant" paginator="true" >
+				
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="ID" />
+					</f:facet>
+					<h:outputText value="#{clientCourant.id}" />
+				</p:column>
+				
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="NOM" />
+					</f:facet>
+					<h:outputText value="#{clientCourant.nom}" />
+				</p:column>
+				
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="PRENOM" />
+					</f:facet>
+					<h:outputText value="#{clientCourant.prenom}" />
+				</p:column>
+				
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="AGE" />
+					</f:facet>
+					<h:outputText value="#{clientCourant.age}" />
+				</p:column>
+				
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="CIN" />
+					</f:facet>
+					<h:outputText value="#{clientCourant.cin}" />
+				</p:column>
+				
+				<p:column>
+					<f:facet name="header">
+						<h:outputText value="Action" />
+					</f:facet>
+					<p:commandButton value="Select" update=":panelManageClient">
+						<f:setPropertyActionListener target="#{clientMB.client}" value="#{clientCourant}"></f:setPropertyActionListener>
+						<f:setPropertyActionListener target="#{clientMB.displayForm}" value="true"></f:setPropertyActionListener>
+					</p:commandButton>
+				</p:column>
+			
+			</p:dataTable>
+			
+			<p:commandButton value="NEW CLIENT" actionListener="#{clientMB.showAddClientForm}" update=":panelManageClient" />
+		</h:form>		
+</ui:composition>
