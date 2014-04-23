@@ -4,10 +4,11 @@
                 xmlns:ui="http://java.sun.com/jsf/facelets">
                 
                 <h:form rendered="#{authenMB.loggedIn}">
-              
+                
+              <div class="logintext">
                 <h:outputText value="Logged in as #{authenMB.client.prenom}  #{authenMB.client.nom}" />
 
-               <div class="box">
+               
                <h3>
                 <h:commandLink action="#{authenMB.logOut}" value="LOGOUT" /></h3>
               </div>

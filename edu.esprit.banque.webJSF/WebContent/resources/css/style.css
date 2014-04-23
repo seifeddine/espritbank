@@ -93,8 +93,26 @@ ul h4 {
 .box {
 	overflow: hidden;
 	margin-bottom: 1em;
+	
 }
 
+.go{
+	display: block;
+  width: 150px;
+  height: 25px;
+  background: #4E9CAF;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+	}
+
+.logintext {
+	overflow: hidden;
+	margin-bottom: 1em;
+	margin : 0px 50px 50px 750px;
+}
 .date {
 	background: #6E6E6E;
 	padding: 5px 6px 5px 6px;
@@ -289,10 +307,10 @@ ul h4 {
 }
 
 #page {
-	padding: 45px 45px 15px 45px;
+	padding: 5px 45px 15px 45px;
 	position: relative;
 	width: 890px;
-	height: 600px;
+	height: 800px;
 	margin: 0;
 }
 

@@ -9,7 +9,7 @@
 		<h:form>
 		
 			<p:dataTable value="#{clientMB.clients}" 
-			var="clientCourant" paginator="true" >
+			var="clientCourant" paginator="true" rows="10">
 				
 				<p:column>
 					<f:facet name="header">
@@ -57,7 +57,9 @@
 				</p:column>
 			
 			</p:dataTable>
-			
+	
+	
+	
 			<p:commandButton value="NEW CLIENT" actionListener="#{clientMB.showAddClientForm}" update=":panelManageClient" />
 		</h:form>		
 </ui:composition>
