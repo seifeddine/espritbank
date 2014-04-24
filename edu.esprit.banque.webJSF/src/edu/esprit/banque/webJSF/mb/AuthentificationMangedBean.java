@@ -9,6 +9,7 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
+import edu.esprit.banque.domain.Admin;
 import edu.esprit.banque.domain.Client;
 import edu.esprit.banque.ejb.services.ClientServiceLocal;
 
@@ -20,6 +21,7 @@ public class AuthentificationMangedBean implements Serializable {
 	//Model
 	private Client client = new Client();
 	
+	
 	@EJB
 	ClientServiceLocal clientServiceLocal;
 	
@@ -28,11 +30,24 @@ public class AuthentificationMangedBean implements Serializable {
 	public String authentification(){
 		String s=null;
 		Client found = clientServiceLocal.authenticate(client.getLogin(), client.getPass());
-		if(found!=null){
+		
+		
+		if((found!=null)&&(found.isIsadmin()==false)){
+			client=found;
+			loggedIn=true;
+			s= "/pages/client/homeClient";
+		}
+			
+		
+			
+		else if((found!=null)&&(found.isIsadmin()==true)){
 			client=found;
 			loggedIn=true;
 			s= "/pages/client/home";
-		} else {
+			
+		}
+		
+		else {
 			loggedIn=false;
 			FacesMessage message = new FacesMessage("Bad Credentials!");
 			FacesContext.getCurrentInstance().addMessage("loginForm:loginButton", message);
