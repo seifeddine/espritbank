@@ -45,7 +45,7 @@ public class ClientService implements ClientServiceRemote, ClientServiceLocal {
 	@Override
 	public List<Client> findAllClients() {
 		//Query q=entityManager.createQuery("select c from Client c",Client.class);
-		return entityManager.createQuery("select c from Client c",Client.class).getResultList();
+		return entityManager.createQuery("select c from Client c where c.isadmin=0",Client.class).getResultList();
 	}
 
 	@Override
