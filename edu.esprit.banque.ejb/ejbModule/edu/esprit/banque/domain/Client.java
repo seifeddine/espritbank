@@ -26,10 +26,21 @@ public class Client implements Serializable{
 	private String login;
 	private String pass;
 	private int age;
-	private Fiche fiche;
+	private boolean isadmin;
+	
+	
+	//private Fiche fiche;
 	private List <Compte> comptes;
 	private List <Agence> Agences;
 
+	
+	
+	public boolean isIsadmin() {
+		return isadmin;
+	}
+	public void setIsadmin(boolean isadmin) {
+		this.isadmin = isadmin;
+	}
 	@ManyToMany(mappedBy="clients")
 	public List<Agence> getAgences() {
 		return Agences;
@@ -45,13 +56,13 @@ public class Client implements Serializable{
 	public void setComptes(List<Compte> comptes) {
 		this.comptes = comptes;
 	}
-	@OneToOne(cascade=CascadeType.PERSIST)
+	/*@OneToOne(cascade=CascadeType.PERSIST)
 	public Fiche getFiche() {
 		return fiche;
 	}
 	public void setFiche(Fiche fiche) {
 		this.fiche = fiche;
-	}
+	}*/
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	public Integer getId() {

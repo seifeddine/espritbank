@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.ejb.Remote;
 
+import edu.esprit.banque.domain.Admin;
 import edu.esprit.banque.domain.Client;
 
 @Remote
@@ -16,4 +17,8 @@ public List<Client> findAllClients();
 public List<Client> getClientByAge(int age);
 public Client getClientByCin(int cin);
 public Client authenticate (String log , String pass);
+
+
+public Admin authenticateAdmin (String log , String pass);
+void addAdmin(Admin ad);
 }

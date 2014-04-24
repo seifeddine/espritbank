@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import edu.esprit.banque.domain.Admin;
 import edu.esprit.banque.domain.Client;
 
 /**
@@ -81,8 +82,39 @@ public class ClientService implements ClientServiceRemote, ClientServiceLocal {
 		}
 	return found;	
 	}
+	// Authentification Admin
+	/*
+	@Override
+	public Admin authenticateAdmin(String login, String password) {
+	Admin foundadmin = null;
+		
+		String jpql="select c from Admin c where c.login=:login and c.pass=:password";
+		Query query = entityManager.createQuery(jpql);
+		query.setParameter("login", login);
+		query.setParameter("password", password);
+		System.out.println(login+"  "+password);
+		try 
+		{
+			foundadmin = (Admin) query.getSingleResult();
+			
+		}
+		catch (Exception ex)
+		{
+			return null;			
+		}
+	return foundadmin;
+	}*/
 	
+	@Override
+	public void addAdmin(Admin ad) {
+		entityManager.persist(ad);
+	}
 
+	@Override
+	public Admin authenticateAdmin(String log, String pass) {
+		// TODO Auto-generated method stub
+		return null;
+	}
   
    
 

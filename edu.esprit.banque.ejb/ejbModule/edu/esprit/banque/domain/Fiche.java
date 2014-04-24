@@ -21,10 +21,10 @@ public class Fiche implements Serializable {
 	private String address;
 	private Client client;
 	
-	@OneToOne(mappedBy="fiche")
+	/*@OneToOne(mappedBy="fiche")
 	public Client getClient() {
 		return client;
-	}
+	}*/
 
 	public void setClient(Client client) {
 		this.client = client;

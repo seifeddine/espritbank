@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
+import edu.esprit.banque.domain.Admin;
 import edu.esprit.banque.domain.Client;
 
 
@@ -17,5 +18,11 @@ public interface ClientServiceLocal {
 	public List<Client> findAllClients();
 	public List<Client> getClientByAge(int age);
 	public Client getClientByCin(int cin);
+	
+	//Methode pour Client authentification (après il faut changer ces fichier en AdminServices et ajouter un Service client a part
+	
+	
+	public Admin authenticateAdmin (String log , String pass);
+	void addAdmin(Admin ad);
 
 }
