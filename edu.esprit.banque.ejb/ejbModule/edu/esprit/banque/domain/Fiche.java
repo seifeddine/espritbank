@@ -19,14 +19,14 @@ public class Fiche implements Serializable {
 	private int id;
 	private Date datenaiss;
 	private String address;
-	private Client client;
+	private Personne client;
 	
 	/*@OneToOne(mappedBy="fiche")
 	public Client getClient() {
 		return client;
 	}*/
 
-	public void setClient(Client client) {
+	public void setClient(Personne client) {
 		this.client = client;
 	}
 

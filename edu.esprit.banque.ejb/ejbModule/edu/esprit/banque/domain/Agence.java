@@ -12,14 +12,14 @@ import javax.persistence.Table;
 public class Agence {
 
 	private String nameAgence;
-	private List <Client> clients;
+	private List <Personne> clients;
 
 	@ManyToMany
-	public List<Client> getclients() {
+	public List<Personne> getclients() {
 		return clients;
 	}
 
-	public void setclients(List<Client> clientlist) {
+	public void setclients(List<Personne> clientlist) {
 		this.clients = clientlist;
 	}
 

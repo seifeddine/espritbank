@@ -3,7 +3,7 @@
 	<persistence-unit name="banqueDS">
 	
 <jta-data-source>java:/BanqueDS</jta-data-source>
-<class>edu.esprit.banque.domain.Client</class>
+<class>edu.esprit.banque.domain.Personne</class>
 <class>edu.esprit.banque.domain.Compte</class>
 <class>edu.esprit.banque.domain.Agence</class>
 <class>edu.esprit.banque.domain.Fiche</class>	

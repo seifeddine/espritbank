@@ -10,22 +10,24 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ViewScoped;
 import javax.swing.text.StyledEditorKit.BoldAction;
 
-import edu.esprit.banque.domain.Client;
-import edu.esprit.banque.ejb.services.ClientServiceLocal;
+import org.primefaces.model.chart.PieChartModel;
+
+import edu.esprit.banque.domain.Personne;
+import edu.esprit.banque.ejb.services.PersonneServiceLocal;
 
 
 @ManagedBean(name="clientMB")
 @ViewScoped
 public class ClientManagedBean implements Serializable {
 	
-	private Client client = new Client();
-	
-	private List<Client> clients = new ArrayList<Client>();
+	private Personne client = new Personne();
+    private PieChartModel pieModel;  
+	private List<Personne> clients = new ArrayList<Personne>();
 	
 	private boolean displayForm=false;
 	
 	@EJB
-	private ClientServiceLocal clientServiceLocal;
+	private PersonneServiceLocal clientServiceLocal;
 	
 	public String saveOrUpdateClient(){
 		String navTo=null;
@@ -51,7 +53,7 @@ public class ClientManagedBean implements Serializable {
 	
 	public String showAddClientForm(){
 		String navTo=null;
-		client=new Client();
+		client=new Personne();
 		displayForm=true;
 		return navTo;
 	}
@@ -62,19 +64,19 @@ public class ClientManagedBean implements Serializable {
 		clients= clientServiceLocal.findAllClients();
 	}
 
-	public Client getClient() {
+	public Personne getClient() {
 		return client;
 	}
 
-	public void setClient(Client client) {
+	public void setClient(Personne client) {
 		this.client = client;
 	}
 
-	public List<Client> getClients() {
+	public List<Personne> getClients() {
 		return clients;
 	}
 
-	public void setClients(List<Client> clients) {
+	public void setClients(List<Personne> clients) {
 		this.clients = clients;
 	}
 
@@ -87,6 +89,20 @@ public class ClientManagedBean implements Serializable {
 	public void setDisplayForm(boolean displayForm) {
 		this.displayForm = displayForm;
 	}
+	
+	public PieChartModel getPieModel() { 
+		 createPieModel();  
+        return pieModel;  
+    }  
+  
+    private void createPieModel() {  
+        pieModel = new PieChartModel();  
+        for (final Personne p : clients) {
+  
+        pieModel.set(p.getNom(), p.getSold());  
+   
+    }  
+    }
 	
 
 }

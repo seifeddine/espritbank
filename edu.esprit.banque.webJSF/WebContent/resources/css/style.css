@@ -27,7 +27,6 @@ body {
 	font-size: 11.5pt;
 	color: #5C5B5B;
 	line-height: 1.75em;
-	background: #E0DCDC url(/resources/img/img01.gif) repeat-x top left;
 }
 
 body,input {
@@ -94,6 +93,27 @@ ul h4 {
 	overflow: hidden;
 	margin-bottom: 1em;
 	
+}
+
+
+.wellcome
+{
+text-shadow:-2px 8px 5px rgba(255,109,56,0.9);
+font-weight:normal;
+color:#E80000;background-color:#FFFFFF;letter-spacing:-1pt;word-spacing:-7pt;
+font-size:51px;
+text-align:center;
+font-family:verdana, sans-serif;line-height:1;
+}
+
+
+.sold
+{
+font-weight:bold;font-style:oblique;
+text-transform:uppercase;color:#27E809;
+background-color:#FFFFFF;letter-spacing:-1pt;
+word-spacing:-7pt;font-size:37px;
+text-align:center;font-family:verdana, sans-serif;line-height:1;
 }
 
 .go{

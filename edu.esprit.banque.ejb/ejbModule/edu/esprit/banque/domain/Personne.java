@@ -16,8 +16,8 @@ import javax.persistence.Table;
 
 
 @Entity
-@Table(name="t_client")
-public class Client implements Serializable{
+@Table(name="t_personne")
+public class Personne implements Serializable{
 
 	private Integer Id ;
 	private int cin;
@@ -26,36 +26,37 @@ public class Client implements Serializable{
 	private String login;
 	private String pass;
 	private int age;
+	private double sold;
 	private boolean isadmin;
 	
 	
 	//private Fiche fiche;
-	private List <Compte> comptes;
-	private List <Agence> Agences;
+	
+	//private List <Agence> Agences;
 
-	
-	
+
 	public boolean isIsadmin() {
 		return isadmin;
+	}
+	public double getSold() {
+		return sold;
+	}
+	public void setSold(double sold) {
+		this.sold = sold;
 	}
 	public void setIsadmin(boolean isadmin) {
 		this.isadmin = isadmin;
 	}
-	@ManyToMany(mappedBy="clients")
+	
+	/*@ManyToMany(mappedBy="clients")
 	public List<Agence> getAgences() {
 		return Agences;
 	}
 	public void setAgences(List<Agence> agences) {
 		Agences = agences;
-	}
+	}*/
 	
-	@ManyToMany(mappedBy="clients" , cascade=CascadeType.PERSIST)
-	public List<Compte> getComptes() {
-		return comptes;
-	}
-	public void setComptes(List<Compte> comptes) {
-		this.comptes = comptes;
-	}
+
 	/*@OneToOne(cascade=CascadeType.PERSIST)
 	public Fiche getFiche() {
 		return fiche;

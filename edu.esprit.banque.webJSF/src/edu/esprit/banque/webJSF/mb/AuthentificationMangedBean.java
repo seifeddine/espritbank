@@ -9,9 +9,8 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
-import edu.esprit.banque.domain.Admin;
-import edu.esprit.banque.domain.Client;
-import edu.esprit.banque.ejb.services.ClientServiceLocal;
+import edu.esprit.banque.domain.Personne;
+import edu.esprit.banque.ejb.services.PersonneServiceLocal;
 
 @ManagedBean(name="authenMB")
 @SessionScoped
@@ -19,17 +18,17 @@ public class AuthentificationMangedBean implements Serializable {
 	
 	
 	//Model
-	private Client client = new Client();
+	private Personne client = new Personne();
 	
 	
 	@EJB
-	ClientServiceLocal clientServiceLocal;
+	PersonneServiceLocal clientServiceLocal;
 	
 	private boolean loggedIn=false;
 	
 	public String authentification(){
 		String s=null;
-		Client found = clientServiceLocal.authenticate(client.getLogin(), client.getPass());
+		Personne found = clientServiceLocal.authenticate(client.getLogin(), client.getPass());
 		
 		
 		if((found!=null)&&(found.isIsadmin()==false)){
@@ -59,18 +58,18 @@ public class AuthentificationMangedBean implements Serializable {
 	
 	public String logOut(){
 		String navTo=null;
-		client= new Client();
+		client= new Personne();
 		loggedIn=false;
 		navTo="/pages/welcome";
 		return navTo;
 		
 	}
 
-	public Client getClient() {
+	public Personne getClient() {
 		return client;
 	}
 
-	public void setClient(Client client) {
+	public void setClient(Personne client) {
 		this.client = client;
 	}
 

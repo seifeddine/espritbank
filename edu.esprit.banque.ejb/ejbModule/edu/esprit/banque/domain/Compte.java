@@ -4,9 +4,12 @@ import java.io.Serializable;
 import java.util.List;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -16,17 +19,14 @@ public class Compte implements Serializable {
 
 	private int numCompte;
 	private double solde;
-	private List <Client> clients;
+	
 
 	
-	@ManyToMany
-	public List<Client> getClients() {
-		return clients;
-	}
-	public void setClients(List<Client> clients) {
-		this.clients = clients;
-	}
+	
+	
 	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+
 	public int getNumCompte() {
 		return numCompte;
 	}
