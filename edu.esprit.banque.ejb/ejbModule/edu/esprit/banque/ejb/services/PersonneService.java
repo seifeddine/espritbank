@@ -47,7 +47,7 @@ public class PersonneService implements PersonneServiceRemote, PersonneServiceLo
 	@Override
 	public List<Personne> findAllClients() {
 		//Query q=entityManager.createQuery("select c from Client c",Client.class);
-		return entityManager.createQuery("select c from Personne c where c.isadmin=0",Personne.class).getResultList();
+		return entityManager.createQuery("select c from Personne c where isadmin=0 ",Personne.class).getResultList();
 	}
 
 	@Override
