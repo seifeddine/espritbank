@@ -10,20 +10,9 @@ import javax.persistence.Table;
 
 /*@Entity
 @Table(name="t_admin")*/
-public class Admin implements Serializable{
+public class Admin extends Personne implements Serializable{
 
 	
-	private boolean isadmin;
-	
-	
-
-	public boolean isIsadmin() {
-		return isadmin;
-	}
-
-	public void setIsadmin(boolean isadmin) {
-		this.isadmin = isadmin;
-	}
 
 	/*@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
