@@ -24,9 +24,14 @@ a:hover {
 }
 
 body {
+	
 	font-size: 11.5pt;
 	color: #5C5B5B;
 	line-height: 1.75em;
+	background: #E0DCDC url('../resources/img/img01.gif') repeat-x top left;
+	
+	
+	
 }
 
 body,input {
@@ -172,7 +177,7 @@ text-align:center;font-family:verdana, sans-serif;line-height:1;
 #header {
 	height: 75px;
 	position: relative;
-	background: #6E6E6E url(/resources/img/img03.jpg) top left no-repeat;
+	background: #6E6E6E url('../resources/img/img03.jpg') top left no-repeat;
 	padding: 45px;
 	color: #FFFFFF;
 	width: 888px;
@@ -219,7 +224,7 @@ text-align:center;font-family:verdana, sans-serif;line-height:1;
 #menu {
 	padding: 0 45px 0 45px;
 	position: relative;
-	background: #209D9D url(/resources/img/img02.gif) repeat-x top left;
+	background: #209D9D url('../resources/img/img02.gif') repeat-x top left;
 	margin: 0;
 	height: 60px;
 	width: 890px;
@@ -361,7 +366,7 @@ text-align:center;font-family:verdana, sans-serif;line-height:1;
 #page-bottom {
 	position: relative;
 	margin: 0;
-	background: #6E6E6E url(/resources/img/img03.jpg) top left no-repeat;
+	background: #6E6E6E url('../resources/img/img03.jpg') top left no-repeat;
 	border: solid 1px #7E7E7E;
 	width: 888px;
 	padding: 45px 45px 0 45px;

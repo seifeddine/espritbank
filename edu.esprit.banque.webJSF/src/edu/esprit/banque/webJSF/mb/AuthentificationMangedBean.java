@@ -19,8 +19,18 @@ public class AuthentificationMangedBean implements Serializable {
 	
 	//Model
 	private Personne client = new Personne();
+	private String userType="";
 	
-	
+	public String getUserType() {
+		return userType;
+	}
+
+	public void setUserType(String userType) {
+		this.userType = userType;
+	}
+
+
+
 	@EJB
 	PersonneServiceLocal clientServiceLocal;
 	
@@ -34,6 +44,7 @@ public class AuthentificationMangedBean implements Serializable {
 		if((found!=null)&&(found.isIsadmin()==false)){
 			client=found;
 			loggedIn=true;
+			userType="Client";
 			s= "/pages/client/homeClient";
 		}
 			
@@ -42,6 +53,7 @@ public class AuthentificationMangedBean implements Serializable {
 		else if((found!=null)&&(found.isIsadmin()==true)){
 			client=found;
 			loggedIn=true;
+			userType="Admin";
 			s= "/pages/client/home";
 			
 		}
