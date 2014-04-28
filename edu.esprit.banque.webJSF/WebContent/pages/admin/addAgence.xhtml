@@ -1,0 +1,16 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                 xmlns:p="http://primefaces.org/ui">
+                
+			<h:form rendered="#{AgenceMB.displayForm}">
+				<h:panelGrid columns="2">
+				<h:outputText value="Libelle" />
+				<p:inputText value="#{AgenceMB.agence.nameAgence}" /><p:commandButton value="SAVE" actionListener="#{AgenceMB.saveOrUpdateAgence}" update=":panelManageAgence" />
+				</h:panelGrid>
+			
+			</h:form>
+			
+		
+</ui:composition>

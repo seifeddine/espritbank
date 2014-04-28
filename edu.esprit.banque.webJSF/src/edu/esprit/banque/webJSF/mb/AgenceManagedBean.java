@@ -29,19 +29,42 @@ public class AgenceManagedBean {
 	private boolean displayForm=false;
 	
 	@EJB
-	private AgenceServiceLocal clientServiceLocal;
+	private AgenceServiceLocal agenceServiceLocal;
 	
 
 	public void setDisplayForm(boolean displayForm) {
 		this.displayForm = displayForm;
 	}
 
+	public boolean isDisplayForm() {
+		return displayForm;
+	}
+
 	public List<Agence> getAgences() {
 		return agences;
 	}
 	
+	public String showAddAgenceForm(){
+		String navTo=null;
+		agence=new Agence();
+		displayForm=true;
+		return navTo;
+	}
+	
+	
+	public String saveOrUpdateAgence(){
+		String navTo=null;
+		agenceServiceLocal.updateAgence(agence);
+		agences= agenceServiceLocal.findAllAgence();
+		displayForm=false;
+		return navTo;
+	}
 	public Agence getAgence() {
 		return agence;
+	}
+	
+	public void setAgence(Agence agence) {
+		this.agence = agence;
 	}
 	
 	public void setAgence(List<Agence> agences) {
@@ -50,7 +73,7 @@ public class AgenceManagedBean {
 	
 	@PostConstruct
 	public void init(){
-		agences= clientServiceLocal.findAllAgence();
+		agences= agenceServiceLocal.findAllAgence();
 	}
 
 	
