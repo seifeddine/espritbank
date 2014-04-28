@@ -19,7 +19,7 @@ public class AgenceService implements AgenceServiceLocal, AgenceServiceRemote {
 	
 	@Override
 	public List<Agence> findAllAgence() {
-		return entityManager.createQuery("select c from Personne c where c.isadmin=0",Agence.class).getResultList();
+		return entityManager.createQuery("select a from Agence a",Agence.class).getResultList();
 	}
 
 	@Override
