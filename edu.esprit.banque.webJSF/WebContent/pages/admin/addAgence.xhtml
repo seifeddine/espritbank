@@ -7,7 +7,8 @@
 			<h:form rendered="#{AgenceMB.displayForm}">
 				<h:panelGrid columns="2">
 				<h:outputText value="Libelle" />
-				<p:inputText value="#{AgenceMB.agence.nameAgence}" /><p:commandButton value="SAVE" actionListener="#{AgenceMB.saveOrUpdateAgence}" update=":panelManageAgence" />
+				<p:inputText value="#{AgenceMB.agence.nameAgence}" />
+				<p:commandButton value="SAVE" actionListener="#{AgenceMB.saveOrUpdateAgence}" update=":panelManageAgence" />
 				</h:panelGrid>
 			
 			</h:form>

@@ -49,6 +49,8 @@ public class PersonneService implements PersonneServiceRemote, PersonneServiceLo
 		//Query q=entityManager.createQuery("select c from Client c",Client.class);
 		return entityManager.createQuery("select c from Personne c where isadmin=0 ",Personne.class).getResultList();
 	}
+	
+	
 
 	@Override
 	public List<Personne> getClientByAge(int age) {
@@ -126,6 +128,21 @@ public class PersonneService implements PersonneServiceRemote, PersonneServiceLo
 		return null;
 	}
   */
+
+	@Override
+	public boolean transferSommeClient(Personne sender,Personne reciever, double somme) {
+		if(sender.getSold()<somme){
+			return false;
+		}
+		//System.out.println(reciever.getId());
+		sender.setSold(sender.getSold()-somme);
+		reciever.setSold(reciever.getSold()+somme);
+		entityManager.merge(sender);
+		entityManager.merge(reciever);
+		return true;
+	}
+
+
 
 	
    

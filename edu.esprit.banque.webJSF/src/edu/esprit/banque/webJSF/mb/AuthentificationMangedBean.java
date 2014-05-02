@@ -54,7 +54,7 @@ public class AuthentificationMangedBean implements Serializable {
 			client=found;
 			loggedIn=true;
 			userType="Admin";
-			s= "/pages/client/home";
+			s= "/pages/admin/home";
 			
 		}
 		

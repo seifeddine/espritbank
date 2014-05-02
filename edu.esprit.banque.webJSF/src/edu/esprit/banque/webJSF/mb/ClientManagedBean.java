@@ -7,6 +7,8 @@ import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
+import javax.faces.bean.RequestScoped;
 import javax.faces.bean.ViewScoped;
 import javax.swing.text.StyledEditorKit.BoldAction;
 
@@ -22,12 +24,16 @@ public class ClientManagedBean implements Serializable {
 	
 	private Personne client = new Personne();
     private PieChartModel pieModel;  
-	private List<Personne> clients = new ArrayList<Personne>();
+	private List<Personne> clients ;
+	private double sommeTrans;
+	private int selectedPersonne;
 	
 	private boolean displayForm=false;
 	
 	@EJB
 	private PersonneServiceLocal clientServiceLocal;
+	@ManagedProperty(value="#{authenMB}")
+	AuthentificationMangedBean authbean;
 	
 	public String saveOrUpdateClient(){
 		String navTo=null;
@@ -36,7 +42,12 @@ public class ClientManagedBean implements Serializable {
 		displayForm=false;
 		return navTo;
 	}
-	
+	public AuthentificationMangedBean getAuthbean() {
+		return authbean;
+	}
+	public void setAuthbean(AuthentificationMangedBean authbean) {
+		this.authbean = authbean;
+	}
 	public String delete(){
 		String navTo=null;
 		clientServiceLocal.deleteClient(client);
@@ -103,6 +114,28 @@ public class ClientManagedBean implements Serializable {
    
     }  
     }
-	
+
+	public ClientManagedBean() {
+		clients= new ArrayList<Personne>();
+	}
+    public double getSommeTrans() {
+		return sommeTrans;
+	}
+    public void setSommeTrans(double sommeTrans) {
+		this.sommeTrans = sommeTrans;
+	}
+    public String transferer(){
+    	Personne p=clientServiceLocal.findClientByID(selectedPersonne);
+    	if(clientServiceLocal.transferSommeClient(authbean.getClient(), p, sommeTrans)){
+    		return "OK";
+    	}
+    	return"KO";
+    }
+	public int getSelectedPersonne() {
+		return selectedPersonne;
+	}
+	public void setSelectedPersonne(int selectedPersonne) {
+		this.selectedPersonne = selectedPersonne;
+	}
 
 }
