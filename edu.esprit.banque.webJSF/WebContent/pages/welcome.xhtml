@@ -1,34 +1,40 @@
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
-                xmlns:h="http://java.sun.com/jsf/html"
-                xmlns:f="http://java.sun.com/jsf/core"
-                xmlns:ui="http://java.sun.com/jsf/facelets"
-                template="/template/template.xhtml">
-                	
-			<ui:define name="pageTitle">Welcome page</ui:define>		
-			<ui:define name="pageContent">
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui" template="/template/template.xhtml">
 
-	
+	<ui:define name="pageTitle">Welcome page</ui:define>
+	<ui:define name="pageContent">
 
 
-<div id="content">
-
-<div class="box">
-<h2>Welcome to Esprit Bank</h2>
-
-	
-
-<p>
-This is
-<strong>Esprit bank</strong><br/>
-ESPRIT_BANK is a banking solution for the ESPRIT group. This project aims to:
-Improve the students knowledge about the services offered by banks.
-Use different technologies.
-ESPRIT-BANK is composed of the following modules
-</p>
-</div>	
-</div>
 
 
-		
-			</ui:define>
+		<div id="content">
+			<p:carousel itemStyleClass="carItem" pageLinks="4"
+				autoPlayInterval="4000" numVisible="1" effect="easeInStrong"
+				circular="true">
+				<h:graphicImage value="/resources/img/slide01.jpg" />
+				<h:graphicImage value="/resources/img/slide02.jpg" />
+				<h:graphicImage value="/resources/img/slide03.jpg" />
+				<h:graphicImage value="/resources/img/slide04.jpg" />
+			</p:carousel>
+			<div class="box">
+				<h2>Welcome to Esprit Bank</h2>
+
+
+
+				<p>
+					This is <strong>Esprit bank</strong><br /> ESPRIT_BANK is a
+					banking solution for the ESPRIT group. This project aims to:
+					Improve the students knowledge about the services offered by banks.
+					Use different technologies. ESPRIT-BANK is composed of the
+					following modules
+				</p>
+			</div>
+		</div>
+
+
+
+	</ui:define>
 </ui:composition>
