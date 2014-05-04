@@ -45,6 +45,14 @@ public class ClientManagedBean implements Serializable {
 	public AuthentificationMangedBean getAuthbean() {
 		return authbean;
 	}
+	
+	public String Retirer(){
+    	if(clientServiceLocal.Retirer(authbean.getClient(), sommeTrans)){
+    		return "OK";
+    	}
+    	return"KO";
+    }
+	
 	public void setAuthbean(AuthentificationMangedBean authbean) {
 		this.authbean = authbean;
 	}

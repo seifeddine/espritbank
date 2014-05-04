@@ -19,7 +19,7 @@ public interface PersonneServiceLocal {
 	public List<Personne> getClientByAge(int age);
 	public Personne getClientByCin(int cin);
 	public boolean transferSommeClient(Personne sender,Personne reciever,double somme);
-	
+	public Boolean Retirer(Personne sender,double somme);
 	public double ShowSold(int id);
 
 }
