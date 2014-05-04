@@ -6,21 +6,23 @@
                 template="/template/template.xhtml">
                 	
 			<ui:define name="pageTitle">Client Home page</ui:define>		
-			<ui:define name="pageContent">
+			<ui:define name="pageContent" >
 		
 			
 			
 			<h2 class="bigger"> Welcome Dear Client</h2>
-			<div class="wellcome">			
+			<div class="wellcome">	
+				
 			 <h:outputText value="#{authenMB.client.nom} #{authenMB.client.prenom}" />			 
 			 </div> 
 			 <br/>
-			 <div class="block-border">
+			 <div class="block-border" >
 <div class="block-content">
 <h1>Client Panel</h1>
-			Your Sold Is : <p class="sold"><h:outputText value="#{authenMB.client.sold}" /></p>
-				
-  <h:form id="form">  
+
+			Your Sold Is : <p class="sold"><h:outputText value="#{authenMB.client.sold}" id="ff" /></p>
+						
+  <h:form >  
      <center>
         <p:selectOneListbox id="basic" value="#{clientMB.selectedPersonne}" style="width:250px;height:200px" >  
            
@@ -30,12 +32,27 @@
         </p:selectOneListbox> 	
         <br/>
         <p:inputText value="#{clientMB.sommeTrans}"  placeholder="Value"/>
-        </center>
+        
         <br/>
-                <h:commandButton action="#{clientMB.Retirer}" value="Retirer la somme" styleClass="button bigger" />
+               
+                 <p></p>
+                <p:commandButton value="Retirer" actionListener="#{clientMB.Retirer}" update=":ff">
+        <p:confirm header="Confirmation" message="etes vous sure?"  />
+    </p:commandButton>
+
+    <p:confirmDialog global="true" showEffect="fade" hideEffect="explode">
+        <p:commandButton value="Yes" type="button" styleClass="ui-confirmdialog-yes" />
+        <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" /> 	
+    </p:confirmDialog>
+                
+                
          <br/>
              
-        <h:commandButton action="#{clientMB.transferer}" value="Transferer" styleClass="button bigger" />
+       <p></p>
+        <p:commandButton value="Transferer" actionListener="#{clientMB.transferer}" update=":ff" >
+        <p:confirm header="Confirmation" message="etes vous sure?"  />
+    </p:commandButton>
+    </center>
 	</h:form>
 			
 		</div>
@@ -44,5 +61,5 @@
 </ui:define>
 			
 		
-		
+
 </ui:composition>
