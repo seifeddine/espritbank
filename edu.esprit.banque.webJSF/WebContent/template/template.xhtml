@@ -1,59 +1,94 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html"
-      xmlns:f="http://java.sun.com/jsf/core"
-      xmlns:ui="http://java.sun.com/jsf/facelets">
-	<h:head>
-		<title>
-		<ui:insert name="pageTitle"/>
-		 </title>
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets">
+<h:head>
+	<title><ui:insert name="pageTitle" /></title>
 
-	
-	
-		
-	</h:head>
-	<h:body id="top">
-	
-	<link rel="shortcut icon" type="image/x-icon" href="#{request.contextPath}/resources/img/favicon.ico" />			 
-	<h:outputStylesheet library="css" name="layout.css"/>	
-	<h:outputStylesheet library="css" name="style.css"/>	
-	<h:outputStylesheet library="css" name="mini2dd3.css"/>	
-	
 
+
+
+</h:head>
+<h:body id="top">
+
+	<link rel="shortcut icon" type="image/x-icon"
+		href="#{request.contextPath}/resources/img/favicon.ico" />
+	<h:outputStylesheet library="css" name="layout.css" />
+	<h:outputStylesheet library="css" name="style.css" />
+	<h:outputStylesheet library="css" name="mini2dd3.css" />
+	
+	
 	<h:outputScript name="jquery-1.7.1.min.js"></h:outputScript>
 
-	
-	
-			<div id="wrapper">
-				<div id="header">
-				<div id="logo">
-			<h1><a href="#">Esprit Bank 2.0</a></h1>
+
+
+
+	<div id="wrapper">
+		<div id="header">
+			<div id="logo">
+				<h1>
+					<a href="#">Esprit Bank 2.0</a>
+				</h1>
+			</div>
+
+			<div id="slogan">
+				<h2>NewGen</h2>
+			</div>
 		</div>
-				
-	<div id="slogan">
-   <h2>NewGen</h2>
-</div>
-</div>
 
-				
-				
-				<div id="horizon">
-					<div id="topbar"><ui:include src="/template/topbar.xhtml" /></div>
-					<div class="box"><ui:include src="/template/identity.xhtml" /></div>
-				</div>
-				
-				
 
-					
-<div id="page">
 
-<ui:insert name="pageContent"/> 
+		<div id="horizon">
+			<div id="topbar">
+				<ui:include src="/template/topbar.xhtml" />
+			</div>
+			<div class="box">
+				<ui:include src="/template/identity.xhtml" />
+			</div>
+		</div>
 
-</div>
-</div>
-				
-			
-				
 
-	</h:body>
+
+
+		<div id="page">
+
+			<ui:insert name="pageContent" />
+
+
+
+		</div>
+		<div id="page-bottom">
+			<div id="page-bottom-content">
+				<h3>Magnis hendrerit erat</h3>
+				<p>Euismod sodales sociis hendrerit pulvinar acursus urna.
+					Consectetur egestas sodales at ornare laoreet turpis. Lorem id
+					sapien ridiculus sagittis imperdiet urna suspendisse. Posuere arcu
+					parturient quam risus. Aliquam nullam magnis integer gravida
+					vulputate felis. Consectetur montes sollicitudin dictum. Auctor
+					sociis hendrerit pulvinar acursus urna lorem ipsum dolor vivamus
+					pulvinar libero. Massa egestas cubilia lacus augue mattis
+					consectetur.</p>
+			</div>
+			<div id="page-bottom-sidebar">
+				<h3>Sed interdum</h3>
+				<ul class="list">
+					<li class="first"><a href="#">Suspendisse ultricies</a></li>
+					<li><a href="#">Tortor mollis enim</a></li>
+					<li class="last"><a href="#">Lorem enim tempor</a></li>
+				</ul>
+			</div>
+			<br class="clearfix" />
+		</div>
+	</div>
+
+	<div id="footer">Copyright (c) 2014 NewGen.com All rights
+		reserved.</div>
+
+
+
+
+
+
+</h:body>
 </html>
