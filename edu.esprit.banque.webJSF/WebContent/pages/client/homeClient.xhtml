@@ -10,11 +10,14 @@
 		
 			
 			
-			<h2> Welcome Dear Client</h2>
+			<h2 class="bigger"> Welcome Dear Client</h2>
 			<div class="wellcome">			
 			 <h:outputText value="#{authenMB.client.nom} #{authenMB.client.prenom}" />			 
 			 </div> 
-			 
+			 <br/>
+			 <div class="block-border">
+<div class="block-content">
+<h1>Client Panel</h1>
 			Your Sold Is : <p class="sold"><h:outputText value="#{authenMB.client.sold}" /></p>
 				
   <h:form id="form">  
@@ -29,10 +32,11 @@
         <p:inputText value="#{clientMB.sommeTrans}"  placeholder="Value"/>
         </center>
         <br/>
-        <h:commandButton action="#{clientMB.transferer}" value="Transferer" />
+        <h:commandButton action="#{clientMB.transferer}" value="Transferer" styleClass="button bigger" />
 	</h:form>
 			
-			
+		</div>
+				</div>	
 				
 </ui:define>
 			

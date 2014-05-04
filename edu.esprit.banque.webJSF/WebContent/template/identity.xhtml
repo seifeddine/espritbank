@@ -4,15 +4,15 @@
                 xmlns:ui="http://java.sun.com/jsf/facelets">
                 
                 <h:form rendered="#{authenMB.loggedIn}">
-                
+             <ul class="dark-grey-gradient">   
               <div class="logintext">
                 <h:outputText value="Logged in as #{authenMB.client.prenom}  #{authenMB.client.nom}" />
 
                
-               <h3>
-                <h:commandLink action="#{authenMB.logOut}" value="LOGOUT" /></h3>
+              
               </div>
-           
+           </ul>
+                               <h:commandLink action="#{authenMB.logOut}" value="LOGOUT" styleClass="button red logout" />
                 
                 </h:form>
                 	

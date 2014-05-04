@@ -9,7 +9,7 @@
 		<h:form>
 		
 			<p:dataTable value="#{clientMB.clients}" 
-			var="clientCourant" paginator="true" rows="10">
+			var="clientCourant" paginator="true" rows="10" styleClass="table">
 				
 				<p:column>
 					<f:facet name="header">
@@ -57,7 +57,7 @@
 					<f:facet name="header">
 						<h:outputText value="Action" />
 					</f:facet>
-					<p:commandButton value="Select" update=":panelManageClient">
+					<p:commandButton value="Select" update=":panelManageClient" styleClass="button red">
 						<f:setPropertyActionListener target="#{clientMB.client}" value="#{clientCourant}"></f:setPropertyActionListener>
 						<f:setPropertyActionListener target="#{clientMB.displayForm}" value="true"></f:setPropertyActionListener>
 					</p:commandButton>
@@ -68,7 +68,7 @@
 	
 	
 		</h:form>	
-		 
-					<p:commandButton value="NEW CLIENT" actionListener="#{clientMB.showAddClientForm}"  update=":panelManageClient" />
-			
+		 <p class="input-with-button">
+					<p:commandButton value="NEW CLIENT" actionListener="#{clientMB.showAddClientForm}" styleClass="button red" update=":panelManageClient" />
+			</p>
 </ui:composition>
