@@ -8,10 +8,16 @@
 			<ui:define name="pageContent">
 			<h:form>
 			<h2> Welcome <h:outputText value="#{authenMB.client.nom} #{authenMB.client.prenom}" /> </h2>
-			
-<a href ="/edu.esprit.banque.webJSF/pages/admin/manageClient.jsf" class="go">Manage Clients</a>		
+
+<div class="block-border">
+<div class="block-content">
+<h1>Control panel</h1>
 <br/>
-<a href ="/edu.esprit.banque.webJSF/pages/admin/Statistics.jsf" class="go">Statistics Clients</a>	
+<a href ="/edu.esprit.banque.webJSF/pages/admin/manageClient.jsf" class="button red">Manage Clients</a>		
+<br/><br/>
+<a href ="/edu.esprit.banque.webJSF/pages/admin/Statistics.jsf" class="button red">Statistics Clients</a>	
+</div></div>
+
 </h:form>
 	</ui:define>
 			

@@ -14,21 +14,23 @@
 			<h:form id="loginForm">
 			<p:panel id="panel" header="Connexion" style="margin-bottom:10px;">  
         <p:messages id="messages" /> 
-	<h:panelGrid columns="2">
+	
 	
 		<h:outputText for="log" value="Login *" />
 		<p:inputText value="#{authenMB.client.login}" required="true" label="Login" id="log">
 		<f:validateLength minimum="2" />
 		</p:inputText>
-		 
+		 <br/><br/><br/>
 		
 		<h:outputText value="Password *" for="pass" />
-		<p:password value="#{authenMB.client.pass}" required="true" label="Password" id="pass"></p:password>
 		
-		<h:commandButton process="@parent:@parent" update="@form" id="loginButton" action="#{authenMB.authentification}" value="LOG IN" />
+		<p:password value="#{authenMB.client.pass}" required="true" label="Password" id="pass"></p:password>
+		<br/><br/><br/>
+		<div>
+		<h:commandButton process="@parent:@parent" update="@form" id="loginButton" action="#{authenMB.authentification}" styleClass="button red" value="LOG IN"/>
 		<h:message for="loginButton" styleClass="error"/>
+		</div>
 	
-	</h:panelGrid>
 		</p:panel>
 	
 	</h:form>
