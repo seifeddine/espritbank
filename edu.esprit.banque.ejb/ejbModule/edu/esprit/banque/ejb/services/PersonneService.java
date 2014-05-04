@@ -26,6 +26,17 @@ public class PersonneService implements PersonneServiceRemote, PersonneServiceLo
 		
 		
 	}
+	
+	@Override
+	public Boolean Retirer(Personne sender, double somme) {
+		if(sender.getSold()<somme){
+			return false;
+		}
+		else 
+		{	sender.setSold(sender.getSold()-somme);
+			entityManager.merge(sender);
+		return true;}
+	}
 
 	@Override
 	public void updateClient(Personne client) {
