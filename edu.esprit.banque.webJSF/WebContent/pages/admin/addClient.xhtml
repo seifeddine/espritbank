@@ -21,6 +21,12 @@
 				<h:outputText value="Solde" />
 				<p:inputText value="#{clientMB.client.sold}" />
 				
+					<h:outputText value="Login" />
+				<p:inputText value="#{clientMB.client.login}" />
+				
+					<h:outputText value="Pass" />
+				<p:inputText value="#{clientMB.client.pass}" />
+				
 				<h:panelGrid columns="2">
 				<p:commandButton value="DELETE" actionListener="#{clientMB.delete}" update=":panelManageClient"/>
 				<p:commandButton value="CANCEL" actionListener="#{clientMB.cancel}" update=":panelManageClient" />
