@@ -105,40 +105,7 @@ public class PersonneService implements PersonneServiceRemote, PersonneServiceLo
 		// TODO Auto-generated method stub
 		return 0;
 	}
-	// Authentification Admin
-	/*
-	@Override
-	public Admin authenticateAdmin(String login, String password) {
-	Admin foundadmin = null;
-		
-		String jpql="select c from Admin c where c.login=:login and c.pass=:password";
-		Query query = entityManager.createQuery(jpql);
-		query.setParameter("login", login);
-		query.setParameter("password", password);
-		System.out.println(login+"  "+password);
-		try 
-		{
-			foundadmin = (Admin) query.getSingleResult();
-			
-		}
-		catch (Exception ex)
-		{
-			return null;			
-		}
-	return foundadmin;
-	}
-	
-	@Override
-	public void addAdmin(Admin ad) {
-		entityManager.persist(ad);
-	}
 
-	@Override
-	public Admin authenticateAdmin(String log, String pass) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-  */
 
 	@Override
 	public boolean transferSommeClient(Personne sender,Personne reciever, double somme) {
@@ -151,6 +118,14 @@ public class PersonneService implements PersonneServiceRemote, PersonneServiceLo
 		entityManager.merge(sender);
 		entityManager.merge(reciever);
 		return true;
+	}
+
+	@Override
+	public Personne getClientByName(String name) {
+		Query q = entityManager.createQuery("select c from Personne c where c.nom = :p");
+		q.setParameter("p", name);
+		return (Personne) q.getSingleResult();
+		
 	}
 
 

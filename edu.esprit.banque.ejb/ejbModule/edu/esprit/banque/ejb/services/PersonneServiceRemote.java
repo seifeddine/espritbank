@@ -17,6 +17,7 @@ public List<Personne> findAllClients();
 public List<Personne> getClientByAge(int age);
 public Personne getClientByCin(int cin);
 public Personne authenticate (String log , String pass);
+public Personne getClientByName(String name);
 
 
 public double ShowSold(int id);

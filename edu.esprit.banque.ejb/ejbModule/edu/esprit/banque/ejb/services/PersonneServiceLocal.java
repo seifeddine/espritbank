@@ -18,6 +18,7 @@ public interface PersonneServiceLocal {
 	public List<Personne> findAllClients();
 	public List<Personne> getClientByAge(int age);
 	public Personne getClientByCin(int cin);
+	public Personne getClientByName(String name);
 	public boolean transferSommeClient(Personne sender,Personne reciever,double somme);
 	public Boolean Retirer(Personne sender,double somme);
 	public double ShowSold(int id);

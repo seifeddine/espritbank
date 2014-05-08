@@ -1,13 +1,4 @@
-/*
-Design by Free CSS Templates
-http://www.freecsstemplates.org
-Released for free under a Creative Commons Attribution 3.0 License
 
-Name       : Big Business 2.0
-Description: A two-column, fixed-width design with a bright color scheme.
-Version    : 1.0
-Released   : 20120624
-*/
 
 * {
 	margin: 0;
@@ -33,7 +24,9 @@ body {
 	
 	
 }
-
+.displayinline{
+	display: inline;
+}
 body,input {
 	font-family: Georgia, serif;
 }

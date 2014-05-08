@@ -1,15 +1,18 @@
 package edu.esprit.banque.webJSF.mb;
 
+import java.awt.event.ActionEvent;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.RequestScoped;
 import javax.faces.bean.ViewScoped;
+import javax.faces.context.FacesContext;
 import javax.swing.text.StyledEditorKit.BoldAction;
 
 import org.primefaces.model.chart.PieChartModel;
@@ -26,8 +29,15 @@ public class ClientManagedBean implements Serializable {
     private PieChartModel pieModel;  
 	private List<Personne> clients ;
 	private double sommeTrans;
-	private int selectedPersonne;
+	private double sommePull;
+	private String selectedPersonne;
 	
+	public double getSommePull() {
+		return sommePull;
+	}
+	public void setSommePull(double sommePull) {
+		this.sommePull = sommePull;
+	}
 	private boolean displayForm=false;
 	
 	@EJB
@@ -47,7 +57,7 @@ public class ClientManagedBean implements Serializable {
 	}
 	
 	public String Retirer(){
-    	if(clientServiceLocal.Retirer(authbean.getClient(), sommeTrans)){
+    	if(clientServiceLocal.Retirer(authbean.getClient(), sommePull)){
     		return "OK";
     	}
     	return"KO";
@@ -133,16 +143,24 @@ public class ClientManagedBean implements Serializable {
 		this.sommeTrans = sommeTrans;
 	}
     public String transferer(){
-    	Personne p=clientServiceLocal.findClientByID(selectedPersonne);
+    	Personne p=clientServiceLocal.getClientByName(selectedPersonne);
     	if(clientServiceLocal.transferSommeClient(authbean.getClient(), p, sommeTrans)){
+    		
     		return "OK";
+    		
     	}
+    	else
+    	{
+    	
+    	
     	return"KO";
+    	}
+    	
     }
-	public int getSelectedPersonne() {
+	public String getSelectedPersonne() {
 		return selectedPersonne;
 	}
-	public void setSelectedPersonne(int selectedPersonne) {
+	public void setSelectedPersonne(String selectedPersonne) {
 		this.selectedPersonne = selectedPersonne;
 	}
 

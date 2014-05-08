@@ -20,22 +20,43 @@
 <div class="block-content">
 <h1>Client Panel</h1>
 
-			Your Sold Is : <p class="sold"><h:outputText value="#{authenMB.client.sold}" id="ff" /></p>
+Your Sold Is : <p class="sold"><h:outputText value="#{authenMB.client.sold}  Dt" id="ff" /> </p>
 						
-  <h:form >  
-     <center>
-        <p:selectOneListbox id="basic" value="#{clientMB.selectedPersonne}" style="width:250px;height:200px" >  
+  <h:form class="form">  
+      <p:growl id="growl" showDetail="true" sticky="true" />
+     <fieldset class="grey-bg no-margin">
+<legend>Make a Transaction</legend>
+<p class="input-with-button">
+<h3>Select Client: </h3>
+         <p:selectOneMenu id="simpleaction" value="#{clientMB.selectedPersonne}" effect="fold" editable="true" style="width:500px;height:40px" >
+            <f:selectItems  var="cl" value="#{clientMB.clients}" itemLabel="#{cl.nom}" itemValue="#{cl.nom}" />
+            
+        </p:selectOneMenu>
+    
+         <!--  <p:selectOneListbox id="basic" value="#{clientMB.selectedPersonne}" style="width:250px;height:200px" >  
            
              <f:selectItems var="cl" value="#{clientMB.clients}" itemLabel="#{cl.nom}" itemValue="#{cl.id}" />  
           
            
-        </p:selectOneListbox> 	
+        </p:selectOneListbox> -->
         <br/>
-        <p:inputText value="#{clientMB.sommeTrans}"  placeholder="Value"/>
+        <h3>Select Amount: </h3><p:inputText value="#{clientMB.sommeTrans}"  placeholder="Value" />
         
+ <p:commandButton value="Transferer" actionListener="#{clientMB.transferer}" update="growl,:ff" >
+    
+        <p:confirm header="Confirmation" message="etes vous sure?"  />
+    </p:commandButton>
+        </p>
+        </fieldset>
+        
+ 
+   
         <br/>
                
-                 <p></p>
+        <fieldset class="grey-bg no-margin">
+<legend>Pull Solde</legend>
+<p class="input-with-button">      
+ <h3>Select Amount: </h3><p:inputText value="#{clientMB.sommePull}"  placeholder="Value" />       
                 <p:commandButton value="Retirer" actionListener="#{clientMB.Retirer}" update=":ff">
         <p:confirm header="Confirmation" message="etes vous sure?"  />
     </p:commandButton>
@@ -45,18 +66,17 @@
         <p:commandButton value="No" type="button" styleClass="ui-confirmdialog-no" /> 	
     </p:confirmDialog>
                 
-                
+         </p>       
          <br/>
              
        <p></p>
-        <p:commandButton value="Transferer" actionListener="#{clientMB.transferer}" update=":ff" >
-        <p:confirm header="Confirmation" message="etes vous sure?"  />
-    </p:commandButton>
-    </center>
+ 
+      </fieldset>
+      
 	</h:form>
 			
 		</div>
-				</div>	
+		</div>	
 				
 </ui:define>
 			
