@@ -23,7 +23,7 @@
 					<f:facet name="header">
 						<h:outputText value="Action" />
 					</f:facet>
-					<p:commandButton value="Select" update=":panelManageAgence">
+					<p:commandButton value="Select" update=":panelManageAgence" styleClass="button red">
 						<f:setPropertyActionListener target="#{AgenceMB.agence}" value="#{agenceCourant}"></f:setPropertyActionListener>
 						<f:setPropertyActionListener target="#{AgenceMB.displayForm}" value="true"></f:setPropertyActionListener>
 					</p:commandButton>

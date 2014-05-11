@@ -107,13 +107,18 @@ font-family:verdana, sans-serif;line-height:1;
 
 .sold
 {
-font-weight:bold;font-style:oblique;
+
 text-transform:uppercase;color:#27E809;
 background-color:#FFFFFF;letter-spacing:-1pt;
 word-spacing:-7pt;font-size:37px;
-text-align:center;font-family:verdana, sans-serif;line-height:1;
+text-align:center; sans-serif;line-height:1;
+font-family :'Quartz MS';
 }
 
+.tab
+{
+    padding: 0 10px; /* Or desired space*/	
+}
 .go{
 	display: block;
   width: 150px;
@@ -333,7 +338,7 @@ text-align:center;font-family:verdana, sans-serif;line-height:1;
 	padding: 5px 45px 15px 45px;
 	position: relative;
 	width: 890px;
-	height: 900px;
+	height: 1100px;
 	margin: 0;
 }
 

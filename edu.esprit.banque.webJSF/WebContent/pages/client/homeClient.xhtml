@@ -11,16 +11,36 @@
 			
 			
 			<h2 class="bigger"> Welcome Dear Client</h2>
-			<div class="wellcome">	
-				
-			 <h:outputText value="#{authenMB.client.nom} #{authenMB.client.prenom}" />			 
-			 </div> 
+			<section class="grid_6">
+			<div class="block-border">
+			<div class="block-content">
+			
+<ul class="shortcuts-list">
+	
+		
+
+<center>
+<a href="javascript:void(0)">
+<img width="48" height="48" src="../resources/img/Profile.png"></img><br/>
+<h:outputText value="#{authenMB.client.nom} #{authenMB.client.prenom}" />	
+ 
+</a>
+</center>
+	
+ </ul>	
+			 	 
+			 </div>
+			 </div>
+			 </section>
+			 
 			 <br/>
-			 <div class="block-border" >
+			 
+			 
+<div class="block-border" >
 <div class="block-content">
 <h1>Client Panel</h1>
 
-Your Sold Is : <p class="sold"><h:outputText value="#{authenMB.client.sold}  Dt" id="ff" /> </p>
+Your Sold Is : <p class="sold"><h:outputText value="#{authenMB.client.sold}" id="ff"/><span class="tab">Dt</span>  </p>
 						
   <h:form class="form">  
       <p:growl id="growl" showDetail="true" sticky="true" />
@@ -42,7 +62,7 @@ Your Sold Is : <p class="sold"><h:outputText value="#{authenMB.client.sold}  Dt"
         <br/>
         <h3>Select Amount: </h3><p:inputText value="#{clientMB.sommeTrans}"  placeholder="Value" />
         
- <p:commandButton value="Transferer" actionListener="#{clientMB.transferer}" update="growl,:ff" >
+ <p:commandButton styleClass="tab" value="Transferer" actionListener="#{clientMB.transferer}" update="growl,:ff" >
     
         <p:confirm header="Confirmation" message="etes vous sure?"  />
     </p:commandButton>
@@ -56,8 +76,8 @@ Your Sold Is : <p class="sold"><h:outputText value="#{authenMB.client.sold}  Dt"
         <fieldset class="grey-bg no-margin">
 <legend>Pull Solde</legend>
 <p class="input-with-button">      
- <h3>Select Amount: </h3><p:inputText value="#{clientMB.sommePull}"  placeholder="Value" />       
-                <p:commandButton value="Retirer" actionListener="#{clientMB.Retirer}" update=":ff">
+ <h3>Select Amount: </h3><p:inputText  value="#{clientMB.sommePull}"  placeholder="Value" />       
+                <p:commandButton styleClass="tab" value="Retirer" actionListener="#{clientMB.Retirer}" update=":ff">
         <p:confirm header="Confirmation" message="etes vous sure?"  />
     </p:commandButton>
 

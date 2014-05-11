@@ -9,16 +9,46 @@
 			<h:form>
 			<h2 class="bigger"> Welcome <h:outputText value="#{authenMB.client.nom} #{authenMB.client.prenom}" /> </h2>
 
+
+
 <div class="block-border">
 <div class="block-content">
 <h1>Control panel</h1>
 <br/>
-<a href ="/edu.esprit.banque.webJSF/pages/admin/manageClient.jsf" class="button red">Manage Clients</a>		
+
+<article class="container_12">
+
+<ul class="favorites">
+<li>
+<img width="48" height="48" src="../resources/img/Modify.png" style="margin-left: 200px">
+<a href ="/edu.esprit.banque.webJSF/pages/admin/manageClient.jsf" >Manage Clients <br/>
+<br/>
+<small>System > Clients</small>
+</a>
+	</img>	
+</li>
 <br/><br/>
-<a href ="/edu.esprit.banque.webJSF/pages/admin/Statistics.jsf" class="button red">Statistics Clients</a>	
+
+<li>
+<img width="48" height="48" src="../resources/img/Pie-Chart.png" style="margin-left: 220px"></img>
+<a href ="/edu.esprit.banque.webJSF/pages/admin/Statistics.jsf" >Statistics Clients
 <br/><br/>
-<a href ="/edu.esprit.banque.webJSF/pages/admin/ManageAgence.jsf" class="button red">Manage Agence</a>	
+<small>System > Stats</small>
+</a>	
+</li>
+
+<li>
+<img width="48" height="48" src="../resources/img/Loading.png" style="margin-left: 220px"></img>
+<a href ="/edu.esprit.banque.webJSF/pages/admin/ManageAgence.jsf">Manage Agence
+<br/><br/>
+<small>System > Agence</small>
+</a>	
+</li>
+</ul>
+</article>
 </div></div>
+
+
 </h:form>
 	</ui:define>
 
